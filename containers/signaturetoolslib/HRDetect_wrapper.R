@@ -164,6 +164,9 @@ for (i in 1:length(SNV_tab_files)){
 }
 SNV_catalogues <- do.call(cbind,SNVcat_list)
 
+plotSubsSignatures(signature_data_matrix = SNV_catalogues,
+                   plot_sum = TRUE,output_file = "SNV_catalogues.pdf")
+
 #Initialize feature matrix
 col_hrdetect <- c("del.mh.prop", "SNV3", "SV3", "SV5", "hrd", "SNV8")
 input_matrix <- matrix(NA,nrow = length(sample_names), ncol = length(col_hrdetect), dimnames = list(sample_names,col_hrdetect))
